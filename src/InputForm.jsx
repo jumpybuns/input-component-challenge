@@ -14,21 +14,25 @@ export const InputForm = () => {
     </div>
   ));
 
+  const item = (
+    <div className="item">
+      {displayTitles}
+      <form>
+        <label>Label</label>
+        <input
+          type="text"
+          placeholder="Placeholder"
+          onChange={handleChange}
+          value={value}
+        />
+      </form>
+    </div>
+  );
+
   return (
     <div>
       <h1>Inputs</h1>
-      <div className="item">
-        {displayTitles}
-        <form>
-          <label>Label</label>
-          <input
-            type="text"
-            placeholder="Placeholder"
-            onChange={handleChange}
-            value={value}
-          />
-        </form>
-      </div>
+      {item}
     </div>
   );
 };
