@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import titles from "./Titles";
 
 export const InputForm = () => {
   const [value, setValue] = useState("");
@@ -7,11 +8,17 @@ export const InputForm = () => {
     setValue(event.target.value);
   };
 
+  const displayTitles = titles.map((title, index) => (
+    <div key={title + index}>
+      <h1>{title.focus}</h1>
+    </div>
+  ));
+
   return (
     <div>
       <h1>Inputs</h1>
       <div className="item">
-        <h3 className="title">Input Name and Stuff</h3>
+        {displayTitles}
         <form>
           <label>Label</label>
           <input
